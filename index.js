@@ -32,11 +32,14 @@ async function getImage(query){
    
 }
 
-let query;
+// let query;
 // getImage('dogs');
 
 const button = document.querySelector('.btn')
 
-button.addEventListener('click',() => getImage('dogs'))
-
-
+button.addEventListener('click',(e) => {
+    e.preventDefault()
+    const query = document.querySelector('#search').value
+    console.log(query);
+    getImage(query)
+})
