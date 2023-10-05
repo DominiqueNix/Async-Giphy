@@ -1,9 +1,10 @@
-require('dotenv').config();
+// require('dotenv').config()
 //const fetch = require("isomorphic-fetch");
 
+const apiKey = "uLJWnWHhVMFghFGEcbA9RcBKsUM19FGE"
 
 // Print out value of API key stored in .env file
-console.log(process.env.API_KEY)
+// console.log(process.env.API_KEY)
 
 // const endpoint = `https://api.giphy.com/v1/gifs/search?api_key=${process.env.API_KEY}&q=dogs&limit=1&offset=0&rating=g&lang=en`
 
@@ -11,7 +12,7 @@ console.log(process.env.API_KEY)
 
 async function getImage(query){
 
-    const endpoint = `https://api.giphy.com/v1/gifs/search?api_key=${process.env.API_KEY}&q=${query}&limit=1&offset=0&rating=g&lang=en`
+    const endpoint = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${query}&limit=1&offset=0&rating=g&lang=en`
 
     try{
         const result = await fetch(endpoint);
@@ -27,4 +28,8 @@ async function getImage(query){
 }
 
 let query;
-getImage('dogs');
+// getImage('dogs');
+
+const button = document.querySelector('.btn')
+
+button.addEventListener('click',() => getImage('dogs'))
