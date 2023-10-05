@@ -17,9 +17,14 @@ async function getImage(query){
     try{
         const result = await fetch(endpoint);
         const data = await result.json();
-        console.log(data.data[0].url);
+        console.log(data.data[0].embed_url);
 
-        const gif = data.data[0].url;
+        const gif = data.data[0].images.original.url;
+        //grabing the img and setting the src
+        let img = document.getElementById('gif');
+        img.setAttribute('src', gif)
+        console.log(img)
+
         return gif;
     }catch(error){
         console.log(error)
@@ -33,3 +38,5 @@ let query;
 const button = document.querySelector('.btn')
 
 button.addEventListener('click',() => getImage('dogs'))
+
+
