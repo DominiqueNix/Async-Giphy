@@ -1,0 +1,28 @@
+*{
+    font-size: 1.5rem;
+}
+
+.btn {
+    padding: 10px;
+    background: linear-gradient(90deg, rgb(199, 247, 169)0%, rgba(23,232,98,1) 35%, rgba(0,212,255,1) 100%);
+    border: none;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    
+}   
+
+.btn:hover {
+    background: rgb(23,232,98,1);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+form{
+    margin: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#search{
+    padding: 10px;
+}
